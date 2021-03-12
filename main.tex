@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This project aims to create the UFC template for presentation.                %%
+%% author: Maurício Moreira Neto - Doctoral student in Computer Science (MDCC)   %%
+%% contacts:                                                                     %%
+%%    e-mail: maumneto@ufc.br                                                    %%
+%%    linktree: https://linktr.ee/maumneto                                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{libs/SUSTech_format}
+\usepackage{ctex}
+% Inserting the preamble file with the packages
+\input{libs/preamble.tex}
+% Inserting the references file
+\bibliography{references.bib}
+
+\usefonttheme{serif,professionalfonts}
+
+% Title
+\title[\LaTeX 入门]{\huge \textbf{\LaTeX 入门}}
+% Subtitle
+% \subtitle{Subtitle of the Presentation}
+% Author of the presentation
+\author{李子强 \hspace{0.5em}计算机系}
+% Institute's Name
+\institute[SUSTech]{
+    % email for contact
+    % \normalsize{\email{lizq2019@mail.sustech.edu.cn}}
+    % \newline
+    % Department Name
+    % \department{Name of the Department}
+    % \newline
+    % university name
+    % \SUSTech
+    \normalsize
+    南方科技大学
+}
+% date of the presentation
+\date{2021年3月31日}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Start Document of the Presentation                                           %%               
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+% insert the code style
+\input{libs/code_style}
+
+%% ---------------------------------------------------------------------------
+% First frame (with tile, subtitle, ...)
+% \begin{frame}{}
+%     %% Putting the background image in the frames
+%     \usebackgroundtemplate{\includegraphics[width=1.7\paperwidth]{libs/LOGO transparent.png}}
+%     \maketitle
+% \end{frame}
+
+{
+    \usebackgroundtemplate{\includegraphics[width=1.7\paperwidth]{libs/LOGO transparent.png}}
+    \begin{frame}
+    \maketitle
+    \end{frame}
+}
+
+%% ---------------------------------------------------------------------------
+% Second frame
+\begin{frame}{目录}
+    \begin{multicols}{2}
+        \tableofcontents
+    \end{multicols}
+\end{frame}
+
+\input{body}
+\input{plugin}
+
+% %% ---------------------------------------------------------------------------
+% % Reference frames
+% \begin{frame}[allowframebreaks]
+%     \frametitle{References}
+%     \printbibliography
+% \end{frame}
+
+%% ---------------------------------------------------------------------------
+% Final frame
+
+{
+    \usebackgroundtemplate{\includegraphics[width=1.7\paperwidth]{libs/LOGO transparent.png}}
+    \begin{frame}{}
+        \centering
+        \huge{\textbf{\example{Thanks!}}}
+        
+        \vspace{1cm}
+        
+        \Large{\textbf{Contact:}}
+        \newline
+        \vspace*{0.5cm}
+        \large{\email{Cnatact info}}
+    \end{frame}
+}
+
+\end{document}
