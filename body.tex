@@ -2,6 +2,10 @@
 %% ---------------------------------------------------------------------------
 % This presentation is separated by sections and subsections
 
+\section{介绍}
+
+\subsection{\TeX 排版系统历史}
+
 \begin{frame}[fragile]{\TeX 与 \LaTeX 的起源}
   \begin{columns}[T]
     \column{.8\textwidth}
@@ -35,6 +39,8 @@
   \end{columns}
 \end{frame}
 
+\subsection{\LaTeX 利弊}
+
 \begin{frame}[fragile]{\LaTeX 的好处与坏处}
     \textbf{好处}
     \begin{itemize}
@@ -52,6 +58,8 @@
     \end{itemize}
 
 \end{frame}
+
+\subsection{本地安装，还是在线编辑？}
 
 \begin{frame}[fragile]{选择发行版 -> 下载 -> 安装}
   \begin{itemize}
@@ -94,6 +102,9 @@
       \end{itemize}
   \end{frame}
 
+\section{填写创作}
+
+\subsection{文件结构}
 
   \begin{frame}[fragile]{文件结构}
     \lstset{language=[LaTeX]TeX}
@@ -108,6 +119,8 @@
   这里开始是正文
   \end{document}\end{lstlisting}
   \end{frame}
+
+  \subsection{常用命令}
   
   \begin{frame}[fragile]{\LaTeX“命令”}
     \framesubtitle{\emph{宏} (Macro)、或者\emph{控制序列} (control sequence)}
@@ -159,7 +172,7 @@
     \cmdxmp{footnote}{我是可爱的脚注}{前方高能\footnote{我是可爱的脚注}}
     \end{frame}
     
-  
+  \subsection{环境}
   \begin{frame}[fragile]{\LaTeX 常用命令}
   \begin{exampleblock}{环境}
   \centering
@@ -173,6 +186,7 @@
   \end{exampleblock}
   \end{frame}
   
+  \subsection{列表}
   \begin{frame}[fragile]{\LaTeX 环境举例}
     \vspace{1em}
       \begin{minipage}{0.4\linewidth}
@@ -259,7 +273,7 @@
     
 
 
-        
+    \subsection{数学公式}
     \begin{frame}[fragile]{\LaTeX 数学公式}
         \begin{itemize}
         \item 数学公式排版是 \LaTeX 的绝对强项
@@ -317,7 +331,7 @@
     \end{frame}
 
     
-    
+    \subsection{目录}
     \begin{frame}[fragile]{层次与目录生成}
     \begin{columns}
     \begin{column}{.6\textwidth}
@@ -346,7 +360,7 @@
     
     \end{frame}
 
-
+    \subsection{插图，表格，交叉引用}
     \begin{frame}[fragile]{交叉引用与插入插图}
         \begin{itemize}
         \item 给对象命名：图片、表格、公式等\\
