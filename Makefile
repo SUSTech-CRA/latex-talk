@@ -1,4 +1,4 @@
-all:	clean; xelatex -shell-escape main.tex; xelatex -shell-escape main.tex
+all: doc
 
 # ifeq ($(OS),Windows_NT)
 #   # on Windows
@@ -7,6 +7,10 @@ all:	clean; xelatex -shell-escape main.tex; xelatex -shell-escape main.tex
 #   # on Unix/Linux
   RM = rm -f
 # endif
+
+doc: clean
+	xelatex -shell-escape main.tex
+	xelatex -shell-escape main.tex
 
 clean:
 	$(RM) *.log *.aux *.bbl *.blg *.synctex.gz *.out *.toc *.lof *.idx *.ilg *.ind *.pdf *.bbl *.bcf *.blg *-blx.aux *-blx.bib *.run.xml *.nav *.pre *.snm *.vrb
