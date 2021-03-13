@@ -1,4 +1,4 @@
-all:	clean; xelatex -shell-escape main.tex
+all:	clean; xelatex -shell-escape main.tex; xelatex -shell-escape main.tex
 
 # ifeq ($(OS),Windows_NT)
 #   # on Windows

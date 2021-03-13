@@ -348,5 +348,209 @@
     \end{columns}
     
     \end{frame}
-    
-    
+
+
+    \begin{frame}[fragile]{交叉引用与插入插图}
+        \begin{itemize}
+        \item 给对象命名：图片、表格、公式等\\
+        |\label{name}|
+      \item 引用对象\\
+        |\ref{name}|
+        \end{itemize}
+      \bigskip
+      
+        \begin{minipage}{0.7\linewidth}
+          \begin{lstlisting}
+      南科大校徽请参见图~\ref{fig:sustech:LOGO}。
+      \begin{figure}[htbp]
+        \centering
+        \includegraphics[height=.2\textheight]%
+        {LOGO.png}
+        \caption{南科大校徽。}
+        \label{fig:sustech:LOGO}
+      \end{figure}
+      \end{lstlisting}
+        \end{minipage}\hfill
+        \begin{minipage}{0.3\linewidth}\centering
+          {\songti 南科大校徽请参见图~1。}\\[1em]
+       \includegraphics[height=0.2\textheight]{LOGO.png}\\
+       {\footnotesize\heiti 图~1. 南科大校徽。}
+        \end{minipage}
+      \end{frame}
+      
+      \begin{frame}[fragile]{交叉引用与插入表格}
+        \begin{columns}
+        \column{.6\textwidth}
+        \begin{lstlisting}
+      \begin{table}[htbp]
+         \caption{编号与含义}
+         \label{tab:number}
+         \centering
+         \begin{tabular}{cl}
+           \hline
+           编号 & 含义 \\
+           \hline
+           1    & 第一 \\
+           2    & 第二 \\
+           \hline
+         \end{tabular}
+      \end{table}
+      公式~(\ref{eq:vsphere}) 中编号与含义
+      请参见表~\ref{tab:number}。
+      \end{lstlisting}
+      \column{.4\textwidth}
+      \centering
+      {\small 表~1. 编号与含义}\\[2pt]
+      \begin{tabular}{cl}\hline
+      编号 & 含义 \\\hline
+      1 & 第一\\
+      2  & 第二\\\hline
+      \end{tabular}\\[5pt]
+      
+      \normalsize 公式~(\ref{eq:vsphere})编号与含义请参见表~1。
+        \end{columns}
+      \end{frame}
+      
+      \begin{frame}[fragile]{浮动体}
+      \begin{itemize}
+      \item 初学者最“捉摸不透”的特性之一 \url{https://liam.page/2017/03/11/floats-in-LaTeX-basic}
+      \item 图片和表格有时会很大，在插入的位置不一定放得下，因此需要浮动调整
+      \item 避免在文中使用「下图」「上图」的说法，而是使用图表的编号，例如 |图~\ref{fig:fig1}| 。
+      \item |\begin{figure}[<位置>] 图片 \end{figure}|
+        \begin{itemize}
+        \item 位置参数指定浮动体摆放的偏好
+        \item |h| 当前位置(here), |t| 顶部(top), |b| 底部(bottom), |p| 单独成页(p)
+        \item |!h| 表示忽略一些限制，|H| 表示强制\alert{（强烈不建议，除非你知道自己在做什么）}
+        \end{itemize}
+      \item 温馨提示：图标题一般在下方，表标题一般在上方
+      \end{itemize}
+      \end{frame}
+      
+      \begin{frame}[fragile]
+        \frametitle{作图与插图}
+        \begin{itemize}
+          \item 外部插入
+      
+            \begin{itemize}
+              \item Mathematica、MATLAB
+              \item PowerPoint、Visio、Adobe Illustrator、Inkscape
+              \item Python \pkg{Matplotlib} 库、\texttt{Plots.jl}、R、Plotly 等
+              \item draw.io \url{https://draw.io/}、ProcessOn \url{https://www.processon.com/} 等在线绘图网站
+            \end{itemize}
+      
+          \item \TeX{} 内联
+      
+            \begin{itemize}
+              \item Asymptote
+              \item \alert{\pkg{pgf}/\pkg{TikZ}、\pkg{pgfplots}}
+            \end{itemize}
+      
+          \item 插图格式
+      
+            \begin{itemize}
+              \item 矢量图：|.pdf| 或 |.eps|
+              \item 位图：|.jpg| 或 |.png|
+              \item 不（完全）支持 |.svg|、|.bmp|
+            \end{itemize}
+      
+          \item 参考：如何在论文中画出漂亮的插图？\url{https://www.zhihu.com/question/21664179}
+        \end{itemize}
+      \end{frame}
+      
+      \begin{frame}[fragile]{表格绘制}
+        \begin{itemize}
+          \item 使用 \pkg{booktabs}、\pkg{longtables}、\pkg{multirow} 等宏包
+          \item 手动绘制表格确实比较令人头疼，且较难维护
+          \item 推荐使用在线工具绘制后导出代码：\LaTeX{} Table Generator \url{https://www.tablesgenerator.com/latex_tables}
+        \end{itemize}
+      \end{frame}
+      
+      \begin{frame}[fragile]
+        \frametitle{宏包推荐（\textbf{先读文档}后使用）}
+        \setlength{\leftmarginii}{1.5em}
+        \vspace{-1.5em}
+        \begin{multicols}{3}
+          \begin{itemize}
+            \item 必备
+      
+              \begin{itemize}
+                \item \pkg{amsmath}
+                \item \pkg{graphicx}
+                \item \pkg{hyperref}
+              \end{itemize}
+      
+            \item 样式
+      
+              \begin{itemize}
+                \item \pkg{caption}
+                \item \pkg{enumitem}
+                \item \pkg{fancyhdr}
+                \item \pkg{footmisc}
+                \item \pkg{geometry}
+                \item \pkg{titlesec}
+              \end{itemize}
+      
+            \item 数学
+      
+              \begin{itemize}
+                \item \pkg{bm}
+                \item \pkg{mathtools}
+                \item \pkg{physics}
+                \item \pkg{unicode-math}
+              \end{itemize}
+      
+            \item 表格
+      
+              \begin{itemize}
+                \item \pkg{array}
+                \item \pkg{booktabs}
+                \item \pkg{longtable}
+                \item \pkg{tabularx}
+              \end{itemize}
+      
+            \item 插图、绘图
+      
+              \begin{itemize}
+                \item \pkg{float}
+                \item \pkg{pdfpages}
+                \item \pkg{standalone}
+                \item \pkg{subfig}
+                \item \pkg{pgf}/\pkg{tikz}
+                \item \pkg{pgfplots}
+              \end{itemize}
+      
+            \item 字体
+      
+              \begin{itemize}
+                \item \pkg{newpx}
+                \item \pkg{pifont}
+                \item \pkg{fontspec}
+              \end{itemize}
+      
+            \item 各种功能
+      
+              \begin{itemize}
+                \item \pkg{algorithm2e}
+                \item \pkg{beamer}
+                \item \pkg{biblatex}
+                \item \pkg{listings}
+                \item \pkg{mhchem}
+                \item \pkg{microtype}
+                \item \pkg{minted}
+                \item \pkg{natbib}
+                \item \pkg{siunitx}
+                \item \pkg{xcolor}
+              \end{itemize}
+      
+            \item 多语言
+      
+              \begin{itemize}
+                \item \pkg{babel}
+                \item \pkg{polyglossia}
+                \item \pkg{ctex}
+                \item \pkg{xeCJK}
+              \end{itemize}
+          \end{itemize}
+        \end{multicols}
+        \vspace*{-0.5cm}
+      \end{frame}
