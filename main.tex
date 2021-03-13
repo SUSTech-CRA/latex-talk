@@ -8,6 +8,7 @@
 \documentclass{libs/SUSTech_format}
 \usepackage{ctex}
 \usepackage{tipa}
+\usepackage{hologo}
 \graphicspath{{fig/}}
 
 \def\rawcmd#1{\texttt{\color{DarkBlue}\footnotesize #1}}
@@ -53,8 +54,12 @@
 % date of the presentation
 \date{2021年3月31日}
 
-
-
+\def\texlive{\TeX \ Live}
+\def\TL{\texlive}
+\def\mactex{Mac\TeX}
+\def\BibTeX{Bib\TeX}
+\def\ThuThesis{ThuThesis}
+\def\XeLaTeX{\hologo{Xe}\kern-.13em\LaTeX}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Start Document of the Presentation                                           %%               
@@ -88,6 +93,7 @@
 
 \input{body}
 \input{plugin}
+\input{summary}
 
 % %% ---------------------------------------------------------------------------
 % % Reference frames
