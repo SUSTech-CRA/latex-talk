@@ -53,3 +53,301 @@
 
 \end{frame}
 
+\def\texlive{\TeX \ Live}
+\def\mactex{Mac\TeX}
+
+\begin{frame}[fragile]{选择发行版 -> 下载 -> 安装}
+  \begin{itemize}
+    \item Windows or Linux -> \texlive
+      \begin{itemize}
+        \item 下载 \texlive 离线安装镜像，每年 4月发布当年版本 \url{https://mirrors.sustech.edu.cn/CTAN/systems/texlive/Images/texlive.iso}
+        \item 解压或挂载下载的 ISO，运行 \texttt{install-tl-windows.bat} (Windows) or \texttt{install-tl} (Linux)
+        \item 切换默认仓库为国内镜像可加速今后升级
+      \end{itemize}
+    \item macOS -> \mactex
+      \begin{itemize}
+        \item $\approx$ \texlive 在 Mac 下重新封装版本
+        \item 需要下载独立的安装包 \url{https://mirrors.sustech.edu.cn/CTAN/systems/mac/mactex/MacTeX.pkg}
+      \end{itemize}
+\end{itemize}
+    \emph{不推荐安装 C\TeX 套装}
+    \begin{itemize}
+        \item \emph{存在严重 bug，并且完全过时（2012年已经停止维护）。}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{太麻烦！用在线的}
+
+    \begin{itemize}
+        \item 通过在线平台编辑、编译
+        \item 免去安装/升级等一系列烦恼 可以多人协作 支持中文，但有时需要自己上传字体
+        \item 可以多人协作
+        \item 支持中文，但有时需要自己上传字体
+    \end{itemize}
+
+    \begin{itemize}
+      \item Overleaf
+      \begin{itemize}
+          \item \url{https://www.overleaf.com}
+      \end{itemize}
+      \item ShareLaTex by 计算机研究协会
+      \begin{itemize}
+        \item \url{https://sharelatex.cra.moe/}
+    \end{itemize}
+      \end{itemize}
+  \end{frame}
+
+
+  \begin{frame}[fragile]{文件结构}
+    \lstset{language=[LaTeX]TeX}
+    \begin{lstlisting}[basicstyle=\ttfamily]
+  \documentclass[a4paper]{article}
+  % 文档类型，如 article，[]内是选项，如 a4paper
+  % 这里开始是导言区
+  \usepackage{graphicx} % 引用宏包
+  \graphicspath{{fig/}} % 设置图片目录
+  % 导言区到此为止
+  \begin{document}
+  这里开始是正文
+  \end{document}\end{lstlisting}
+  \end{frame}
+  
+  \begin{frame}[fragile]{\LaTeX{}“命令”}
+    \framesubtitle{\emph{宏} (Macro)、或者\emph{控制序列} (control sequence)}
+  \begin{itemize}
+  \item 简单命令
+    \begin{itemize}
+      \item \verb|\命令|\hspace{2em}
+      \verb|{\songti 中国人民解放军}| ~$\Rightarrow$ {\songti 中国人民解放军}
+    \item \verb|\命令[可选参数]{必选参数}|\\
+  \verb|\section[精简标题]{这个题目实在太长了放到目录里面不太好看}|\\
+  $\Rightarrow$ {\heiti 1.1 \hspace{1em} \songti 这个题目实在太长了放到目录里面不太好看}
+    \end{itemize}
+  \item 环境
+    \begin{columns}[c]
+    \begin{column}{0.45\textwidth}
+      \begin{lstlisting}[basicstyle=\ttfamily]
+  \begin{equation*}
+    a^2-b^2=(a+b)(a-b)
+  \end{equation*}\end{lstlisting}
+  \end{column}\hspace{1em}
+    \begin{column}{0.45\textwidth}
+  $ a^2-b^2=(a+b)(a-b)$
+  \end{column}
+    \end{columns}
+  \end{itemize}
+  \end{frame}
+  
+  \begin{frame}[fragile]{\LaTeX{} 常用命令}
+    \begin{exampleblock}{简单命令}
+  \centering
+  \footnotesize
+    \begin{tabular}{llll}
+      \cmd{chapter} & \cmd{section} & \cmd{subsection} & \cmd{paragraph} \\
+      章 & 节 & 小节 & 带题头段落 \\\hline
+      \cmd{centering} & \cmd{emph} & \cmd{verb} & \cmd{url} \\
+     居中对齐         &  强调      & 原样输出   & 超链接 \\\hline
+    \cmd{footnote} & \cmd{item} & \cmd{caption} & \cmd{includegraphics} \\
+     脚注 & 列表条目 & 标题 & 插入图片 \\\hline
+    \cmd{label} & \cmd{cite} & \cmd{ref} \\
+    标号 & 引用参考文献 & 引用图表公式等\\\hline
+    \end{tabular}
+  \end{exampleblock}
+  \end{frame}
+
+  \begin{frame}{\LaTeX{}命令举例}
+    \cmdxmp{chapter}{前言}{\heiti 第 1 章\hspace{1em} 前言}
+    \cmdxmp{section[精简标题]}{这个题目实在太长了放到目录里面不太好看}{\heiti 1.1
+      \hspace{1em} 这个题目实在太长了放到目录里面不太好看}
+    \cmdxmp{footnote}{我是可爱的脚注}{前方高能\footnote{我是可爱的脚注}}
+    \end{frame}
+    
+  
+  \begin{frame}[fragile]{\LaTeX{} 常用命令}
+  \begin{exampleblock}{环境}
+  \centering
+  \footnotesize
+  \begin{tabular}{lll}
+    \env{table} & \env{figure} & \env{equation}\\
+    表格 & 图片 & 公式 \\\hline
+    \env{itemize} & \env{enumerate} & \env{description}\\
+    无编号列表 & 编号列表 & 描述 \\\hline
+  \end{tabular}
+  \end{exampleblock}
+  \end{frame}
+  
+  \begin{frame}[fragile]{\LaTeX{} 环境举例}
+    \vspace{1em}
+      \begin{minipage}{0.4\linewidth}
+        \begin{lstlisting}[basicstyle=\ttfamily\small]
+    \begin{itemize}
+      \item 一条
+      \item 次条
+      \item 这一条可以分为 ...
+        \begin{itemize}
+          \item 子一条
+        \end{itemize}
+    \end{itemize}\end{lstlisting}
+      \end{minipage}\hspace{1.5cm}
+      \begin{minipage}{0.4\linewidth}
+    \begin{itemize}
+      \item 一条
+      \item 次条
+      \item 这一条可以分为 ...
+        \begin{itemize}
+          \item 子一条
+        \end{itemize}
+    \end{itemize}
+      \end{minipage}
+    % \smallskip
+    
+    \begin{minipage}{0.4\linewidth}
+    \begin{lstlisting}
+    \begin{enumerate}
+      \item 一条
+      \item 次条
+      \item 再条
+    \end{enumerate}\end{lstlisting}
+      \end{minipage}\hspace{1.5cm}
+      \begin{minipage}{0.4\linewidth}
+    \begin{enumerate}
+      \item 一条
+      \item 次条
+      \item 再条
+    \end{enumerate}
+      \end{minipage}
+    \end{frame}
+    %
+    
+  %
+
+
+
+        
+    \begin{frame}[fragile]{\LaTeX{} 数学公式}
+        \begin{itemize}
+        \item 数学公式排版是 \LaTeX{} 的绝对强项
+        \item 数学排版需要进入数学模式，引用 \texttt{amsmath} 宏包
+            \begin{itemize}
+            \item 用单个美元符号(\verb|$|) 包围起来的内容是 {\bf 行内公式}
+          \item 用两个美元符号(\verb|$$|) （不推荐）或 \verb|\[ \]| 包围起来的是 {\bf 单行公式} 或 {\bf 行间公式}
+            \item 使用数学环境，例如 \texttt{equation} 环境内的公式会自动加上编号，
+                \texttt{align} 环境用于多行公式（例如方程组、多个并列条件等）
+          \end{itemize}
+        \item 寻找符号
+            \begin{itemize}
+              \item 运行 \texttt{texdoc symbols} 查看符号表
+              \item S. Pakin. \emph{The Comprehensive \LaTeX{} Symbol List}
+                    \url{https://ctan.org/pkg/comprehensive}
+              \item 手写识别（有趣但不全）：Detexify \url{http://detexify.kirelabs.org}
+            \end{itemize}
+        \item MathType 也可以使用和导出 \LaTeX{} 公式（不推荐）
+        \end{itemize}
+        \end{frame}
+    
+        
+    \begin{frame}[fragile]{\LaTeX{} 数学公式}
+    
+    \begin{columns}
+    \begin{column}{.5\textwidth}
+    \begin{lstlisting}[basicstyle=\ttfamily\small]
+    $V = \frac{4}{3}\pi r^3$
+    
+    \[
+      V = \frac{4}{3}\pi r^3
+    \]
+    
+    \begin{equation}
+    \label{eq:vsphere}
+    V = \frac{4}{3}\pi r^3
+    \end{equation}
+    \end{lstlisting}
+    \end{column}
+    
+    \begin{column}{.5\textwidth}
+    $V = \frac{4}{3}\pi r^3$
+    
+    \[
+      V = \frac{4}{3}\pi r^3
+    \]
+    
+    \begin{equation}
+    \label{eq:vsphere}
+    V = \frac{4}{3}\pi r^3
+    \end{equation}
+    \end{column}
+    \end{columns}
+    
+    \end{frame}
+
+    
+    
+    \begin{frame}[fragile]{层次与目录生成}
+    \begin{columns}
+    \begin{column}{.6\textwidth}
+    
+    \begin{lstlisting}[basicstyle=\ttfamily\small]
+    \tableofcontents % 这里是目录
+    \part{有监督学习}
+    \chapter{支持向量机}
+    \section{支持向量机简介}
+    \subsection{支持向量机的历史}
+    \subsubsection{支持向量机的诞生}
+    \paragraph{一些趣闻}
+    \subparagraph{第一个趣闻}
+    \end{lstlisting}
+    \end{column}
+    \begin{column}{.4\textwidth}
+    第一部分\quad 有监督学习\\
+    第一章\quad 支持向量机 \\
+    1. 支持向量机简介 \\
+    1.1 支持向量机的历史 \\
+    1.1.1 支持向量机的诞生 \\
+    一些趣闻  \\
+    第一个趣闻
+    \end{column}
+    \end{columns}
+    
+    \end{frame}
+    
+    
+    \begin{frame}[fragile]{列表与枚举}
+    \begin{columns}
+    \begin{column}{.6\textwidth}
+    \begin{lstlisting}[basicstyle=\ttfamily\small]
+    \begin{enumerate}
+    \item \LaTeX{} 好处都有啥
+      \begin{description}
+        \item[好用] 体验好才是真的好
+        \item[好看] 强迫症的福音
+        \item[开源] 众人拾柴火焰高
+      \end{description}
+    \item 还有呢?
+      \begin{itemize}
+        \item 好处 1
+        \item 好处 2
+      \end{itemize}
+    \end{enumerate}
+    \end{lstlisting}
+    \end{column}
+    \begin{column}{.4\textwidth}
+    {\small
+    \begin{enumerate}
+    \item \LaTeX{} 好处都有啥
+      \begin{description}
+        \item[好用] 体验好才是真的好
+        \item[好看] 治疗强迫症
+        \item[开源] 众人拾柴火焰高
+      \end{description}
+    \item 还有呢?
+      \begin{itemize}
+        \item 好处 1
+        \item 好处 2
+      \end{itemize}
+    \end{enumerate}
+    }
+    \end{column}
+    \end{columns}
+    
+    \end{frame}
+    

@@ -4,13 +4,13 @@
 \ProvidesClass{libs/SUSTech_format}[15/12/2020 v1.0 ufc template beamer]
 
 \PassOptionsToPackage{svgnames}{xcolor} 
-\LoadClass[compress, 10pt]{beamer}
+\LoadClass[compress, 10pt,aspectratio=169]{beamer}
 
 %% Putting the background image in the frames
 %% Global background setting
 % \usebackgroundtemplate{\includegraphics[width=1.7\paperwidth]{libs/LOGO transparent.png}}
 
-\logo{\includegraphics[scale=0.4]{libs/lib.png}\hspace{9.3cm} \vspace{-0.2cm}}
+\logo{\includegraphics[scale=0.4]{libs/lib.png}\hspace{12.5cm} \vspace{-0.2cm}}
 
 %% Packages Used
 \RequirePackage[utf8]{inputenc}

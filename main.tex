@@ -8,8 +8,14 @@
 \documentclass{libs/SUSTech_format}
 \usepackage{ctex}
 \usepackage{tipa}
+\usepackage{unicode-math}
+\usepackage{amsmath}
 \graphicspath{{fig/}}
 
+\def\cmd#1{\texttt{\color{DarkBlue}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{DarkBlue}\footnotesize #1}}
+\def\cmdxmp#1#2#3{\small{\texttt{\color{DarkBlue}$\backslash$#1}\{#2\}\hspace{1em}\\ $\Rightarrow$\hspace{1em} {#3}\par\vskip1em}}
+\newcommand\pkg[1]{\texttt{#1}}
 
 % Inserting the preamble file with the packages
 \input{libs/preamble.tex}
