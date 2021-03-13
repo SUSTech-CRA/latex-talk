@@ -10,6 +10,7 @@
 \usepackage{tipa}
 \usepackage{hologo}
 \usepackage[normalem]{ulem}
+\usepackage{fontawesome5}
 \graphicspath{{fig/}}
 
 \def\rawcmd#1{\texttt{\color{DarkBlue}\footnotesize #1}}
@@ -17,6 +18,7 @@
 \def\env#1{\texttt{\color{DarkBlue}\footnotesize #1}}
 \def\cmdxmp#1#2#3{\small{\texttt{\color{DarkBlue}$\backslash$#1}\{#2\}\hspace{1em}\\ $\Rightarrow$\hspace{1em} {#3}\par\vskip1em}}
 \newcommand\pkg[1]{\texttt{#1}}
+\newcommand\link[1]{\href{#1}{\faLink}}
 \setbeamersize{description width=3em}
 
 
@@ -59,7 +61,7 @@
 \def\TL{\texlive}
 \def\mactex{Mac\TeX}
 \def\BibTeX{Bib\TeX}
-\def\ThuThesis{ThuThesis}
+% \def\ThuThesis{ThuThesis}
 \def\XeLaTeX{\hologo{Xe}\kern-.13em\LaTeX}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
