@@ -106,7 +106,7 @@
 
 \subsection{文件结构}
 
-  \begin{frame}[fragile]{文件结构}
+\begin{frame}[fragile]{文件结构}
     \lstset{language=[LaTeX]TeX}
     \begin{lstlisting}[basicstyle=\ttfamily]
   \documentclass[a4paper]{article}
@@ -120,9 +120,9 @@
   \end{document}\end{lstlisting}
   \end{frame}
 
-  \subsection{常用命令}
+\subsection{常用命令}
   
-  \begin{frame}[fragile]{\LaTeX“命令”}
+\begin{frame}[fragile]{\LaTeX“命令”}
     \framesubtitle{\emph{宏} (Macro)、或者\emph{控制序列} (control sequence)}
   \begin{itemize}
   \item 简单命令
@@ -148,22 +148,57 @@
   \end{itemize}
   \end{frame}
   
-  \begin{frame}[fragile]{\LaTeX 常用命令}
-    \begin{exampleblock}{简单命令}
-  \centering
-  \footnotesize
-    \begin{tabular}{llll}
-      \cmd{chapter} & \cmd{section} & \cmd{subsection} & \cmd{paragraph} \\
-      章 & 节 & 小节 & 带题头段落 \\\hline
-      \cmd{centering} & \cmd{emph} & \cmd{verb} & \cmd{url} \\
-     居中对齐         &  强调      & 原样输出   & 超链接 \\\hline
-    \cmd{footnote} & \cmd{item} & \cmd{caption} & \cmd{includegraphics} \\
-     脚注 & 列表条目 & 标题 & 插入图片 \\\hline
-    \cmd{label} & \cmd{cite} & \cmd{ref} \\
-    标号 & 引用参考文献 & 引用图表公式等\\\hline
-    \end{tabular}
-  \end{exampleblock}
+  % \begin{frame}[fragile]{\LaTeX 常用命令}
+  %   \begin{exampleblock}{简单命令}
+  % \centering
+  % \footnotesize
+  %   \begin{tabular}{llll}
+  %     \cmd{chapter} & \cmd{section} & \cmd{subsection} & \cmd{paragraph} \\
+  %     章 & 节 & 小节 & 带题头段落 \\\hline
+  %     \cmd{centering} & \cmd{emph} & \cmd{verb} & \cmd{url} \\
+  %    居中对齐         &  强调      & 原样输出   & 超链接 \\\hline
+  %   \cmd{footnote} & \cmd{item} & \cmd{caption} & \cmd{includegraphics} \\
+  %    脚注 & 列表条目 & 标题 & 插入图片 \\\hline
+  %   \cmd{label} & \cmd{cite} & \cmd{ref} \\
+  %   标号 & 引用参考文献 & 引用图表公式等\\\hline
+  %   \end{tabular}
+  % \end{exampleblock}
+  % \end{frame}
+  \begin{frame}[fragile]{谋篇布局}
+  \begin{itemize}
+    \item 文档部件
+  
+      \begin{itemize}
+        \item 标题：|\title|、|\author|、|\date| $\to$ |\maketitle|
+        \item 摘要：|abstract| 环境
+        \item 目录：|\tableofcontents|
+        \item 章节：|\chapter|、|\section|、|\subsection| 等
+        \item 图表：|\table|、|\figure|
+        \item 引用：|\label|、|\cite|、|\ref|
+        \item 文献：|\bibliography|
+      \end{itemize}
+  
+    \item 文档划分
+  
+      \begin{itemize}
+        \item 凤头猪肚豹尾：|\frontmatter|、|\mainmatter|、|\backmatter|
+        \item 分文件编译：|\include|、|\input|
+      \end{itemize}
+  \end{itemize}
   \end{frame}
+
+  \begin{frame}[fragile]
+    \frametitle{文本标记}
+    \begin{itemize}
+      \item 加粗：|{\bfseries ...}| 或 |\textbf{...}|
+      \item 倾斜：|{\itshape ...}| 或 |\textit{...}|
+      \item 字号：|\tiny|、|\small|、|\large|、|\Large| 等
+      \item 换行：|\\|
+      \item 缩进：|\indent|
+      \item 居中：|\centering| 或 |center| 环境
+    \end{itemize}
+  \end{frame}
+    
 
   \begin{frame}{\LaTeX 命令举例}
     \cmdxmp{chapter}{前言}{\heiti 第 1 章\hspace{1em} 前言}
@@ -186,8 +221,8 @@
   \end{exampleblock}
   \end{frame}
   
-  \subsection{列表}
-  \begin{frame}[fragile]{\LaTeX 环境举例}
+\subsection{列表}
+\begin{frame}[fragile]{\LaTeX 环境举例}
     \vspace{1em}
       \begin{minipage}{0.4\linewidth}
         \begin{lstlisting}[basicstyle=\ttfamily\small]
@@ -569,3 +604,112 @@
         \end{multicols}
         \vspace*{-0.5cm}
       \end{frame}
+
+  \subsection{文献管理}
+  \begin{frame}[fragile]
+    \frametitle{文献管理}
+    \begin{itemize}
+      \item 建议自动生成\pause （你只有三篇参考文献？）\pause
+      \item |.bib| 数据库
+    
+        \begin{itemize}
+          \item Google Scholar 可直接复制：点击 \faQuoteRight \quad -> BibTeX
+          \item 用 EndNote、Jabref 等生成
+        \end{itemize} \pause
+    
+      \item 传统方法：\BibTeX  后端
+    
+        \begin{itemize}
+          \item 控制文献、引用样式：\pkg{natbib} 宏包
+          \item 国家标准 GB/T 7714--2015
+                \link{https://www.gb688.cn/bzgk/gb/newGbInfo?hcno=7FA63E9BBA56E60471AEDAEBDE44B14C}
+                \link{https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style/files/153951/GBT.7714-2015.pdf}：
+                \alert{\pkg{gbt7714} 宏包}
+        \end{itemize} \pause
+    
+      \item 现代方法：\pkg{biber} 后端 + \pkg{biblatex} 宏包
+    
+        \begin{itemize}
+          \item 国家标准：\pkg{biblatex-gb7714-2015} 宏包
+        \end{itemize} \pause
+    
+      \item 需多次编译
+        \begin{itemize}
+          \item \pdfLaTeX -> \BibTeX -> \pdfLaTeX -> \pdfLaTeX
+          \item \XeLaTeX -> \BibTeX -> \XeLaTeX -> \XeLaTeX
+          \item 使用一键脚本：\pkg{VS Code plugin}, \pkg{MakeFile}, \pkg{Batch} script, \pkg{latexmk}
+        \end{itemize}
+      
+    \end{itemize}
+\end{frame}
+
+  \subsection{论文模板使用}
+  \begin{frame}[fragile]
+    \frametitle{模板}
+    \begin{itemize}
+      \item<+-> 是什么？
+    
+        \begin{itemize}
+          \item 设计好的格式框架
+          \item 专注于内容：\alert{不要追求与期刊排版一致}
+          \item Word 中的样式：「学好 \LaTeX  可以更科学地使用 Word」
+        \end{itemize}
+    
+      \item<+-> 有哪些？
+    
+        \begin{itemize}
+          \item 期刊：\pkg{revtex}、\pkg{elsarticle}、\pkg{IEEEtran}、\pkg{acmart}……
+          \item 学位论文：\pkg{thuthesis}、\pkg{ustcthesis}、\alert{\pkg{sustechthesis}}……
+        \end{itemize}
+    
+      \item<+-> 怎么用？
+    
+        \begin{itemize}
+          \item |\documentclass{...}|，配置参数，照常编写
+          \item \alert{看文档，看文档，看文档}
+        \end{itemize}
+    
+      \item<+-> 去哪里找？
+    
+        \begin{itemize}
+          \item CTAN \link{https://ctan.org} 或 GitHub \href{https://github.com}{\faGithub}
+          \item 期刊官网
+          \item SUSTech LaTex 模板目录 \link{https://github.com/SUSTC/latex-template}
+          \item 「U 盘拷给你的模板一定是过时的」
+        \end{itemize}
+    \end{itemize}
+    \end{frame}
+    
+  \begin{frame}{论文排版}
+    \begin{itemize}
+      \item 获取模板
+        \begin{itemize}
+          \item 随发行版自带、手动官网下载
+          \item 模板文档类 \texttt{.cls} 文件
+          \item 示例 \texttt{.tex} 文件
+        \end{itemize}
+      \item 编辑 \texttt{.tex} 文件：添加用户内容
+      \item 编译：生成 PDF 文档
+    \end{itemize}
+  \end{frame}
+  
+  \begin{frame}[fragile]{论文排版举例}
+    \begin{exampleblock}{IEEE 期刊论文}
+      \begin{itemize}
+        \item 获取模板：已随发行版自带
+          \begin{itemize}
+            \item 在安装目录 |<prefix>\texlive\2020\texmf-dist\doc\latex\IEEEtran|
+              下找到 |bare_jrnl.tex|
+            \item 复制到某个文件夹(比如个人存论文的目录)
+          \end{itemize}
+        \item 编辑 |bare_jrnl.tex| 文件 (英文模板：不支持中文)
+        \item 编译
+          \begin{itemize}
+            \item 英文文献：\XeLaTeX 、\pdfLaTeX 编译均可
+          \end{itemize}
+      \end{itemize}
+    \end{exampleblock}
+  \end{frame}
+
+
+
