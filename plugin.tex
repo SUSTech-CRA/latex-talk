@@ -1,25 +1,141 @@
-\section{插件}
-\subsection{插件是什么}
-\begin{frame}{插件是什么}
+\section{宏包与多语言}
+\subsection{宏包和TexLive发行版的关系}
+\begin{frame}{宏包是什么}
     % itemize
-    Lets try to list some items
+    很多时候需要自己安装宏包
     \begin{itemize}
-        \item Here is an item
-        \item Here is an item
-        \item Here is an item
+        \item TexLive是包含了若干个常见的宏包和编译器的集合
+        \item 许多的宏包是发行版没有预装的
+        \item 宏包需要更新（TEX Live 升级间隔的尴尬时期，或者宏包有重大变化）
+    \end{itemize}
+    宏包管理软件tlmgr
+    \begin{itemize}
+        \item<+-> Windows
+            \begin{itemize}
+              \item 开始菜单里找 TeX Live Manager
+              \item 设置仓库地址 \texttt{tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet}
+              \item \texttt{tlmgr install <pkgname>} 安装、 \texttt{tlmgr update --self --all} 全部更新
+            \end{itemize}
+        \item<+-> Mac
+          \begin{itemize}
+              \item 开始菜单里找 CTeX / MiKTeX -> Package Manager
+              \item 在 WinEdt 里 MiKTeX \texttt{Options -> Packages}
+        \end{itemize}
+        
     \end{itemize}
 
-    \vspace{0.4cm} % vertical space
     
-    % enumeration
-    Lets try another style
-    \begin{enumerate}
-        \item Here is an item
-        \item Here is an item
-        \item Here is an item
-    \end{enumerate}
 
-    \vspace{0.2cm}
+    \vspace{0.4cm} % vertical space
+\end{frame}
 
-    \example{Example is in this color} \emph{Enphisis is in this color}
+\begin{frame}[fragile]{宏包示例: Tikz (画图)}
+    \vspace{-2em}
+        \begin{columns}
+        \begin{column}{.6\textwidth}
+        \lstset{language=[LaTeX]TeX}
+        \begin{lstlisting}[basicstyle=\ttfamily\tiny]
+\usetikzlibrary{positioning, arrows, shapes, shapes.multipart, backgrounds, calc, automata} %需先导入所需的tikz形状库
+\tikzstyle{mcstate} = [state, fill=gray!20!white]
+\begin{tikzpicture}[draw=Green, very thick, >=latex', auto]
+    \node [mcstate]                 (s4) {4};
+    \node [mcstate, right=of s4]    (s1) {1};
+    \node [mcstate, below=of s4]    (s2) {2};
+    \node [mcstate, right=of s2]    (s6) {6};
+    \node [mcstate, right=of s1]    (s5) {5};
+    \node [mcstate, above=of s1]    (s3) {3};
+    
+    \draw [->]
+        (s4) edge [loop left] node {1/3} (s4)
+        (s4) edge [above]     node {1/3} (s1)
+        (s4) edge             node {1/3} (s2)
+        (s1) edge             node {1} (s3)
+        (s3) edge [above]     node {1} (s5)
+        (s5) edge             node {1} (s1)
+        (s2) edge [bend left] node {1} (s6)
+        (s6) edge [bend left] node {1/2} (s2)
+        (s6) edge [loop right] node {1/2} (s6);
+\end{tikzpicture}                
+        \end{lstlisting}
+        \end{column}
+        \begin{column}{.4\textwidth}
+            \begin{figure}[H]
+                \centering
+                \tikzstyle{mcstate} = [state, fill=gray!20!white]
+                \begin{tikzpicture}[draw=Green, very thick, >=latex', auto]
+                    \node [mcstate]                 (s4) {4};
+                    \node [mcstate, right=of s4]    (s1) {1};
+                    \node [mcstate, below=of s4]    (s2) {2};
+                    \node [mcstate, right=of s2]    (s6) {6};
+                    \node [mcstate, right=of s1]    (s5) {5};
+                    \node [mcstate, above=of s1]    (s3) {3};
+                    
+                    \draw [->]
+                        (s4) edge [loop left] node {1/3} (s4)
+                        (s4) edge [above]     node {1/3} (s1)
+                        (s4) edge             node {1/3} (s2)
+                        (s1) edge             node {1} (s3)
+                        (s3) edge [above]     node {1} (s5)
+                        (s5) edge             node {1} (s1)
+                        (s2) edge [bend left] node {1} (s6)
+                        (s6) edge [bend left] node {1/2} (s2)
+                        (s6) edge [loop right] node {1/2} (s6)
+                    ;
+                \end{tikzpicture}                
+                \caption{Markov Chain} 
+                \end{figure}
+                    
+        
+        \end{column}
+        \end{columns}
+    Ref: \url{https://github.com/paulzfm/TikZ-Tunight} and TUNA 的有关讲座\link{https://tuna.moe/event/2020/tikz/}
+    
+\end{frame}
+
+\begin{frame}[fragile]{宏包示例: \pkg{algorithm2e} (伪代码)}
+    \begin{columns}
+    \begin{column}{.6\textwidth}
+        \lstset{language=[LaTeX]TeX}
+    \begin{lstlisting}[basicstyle=\ttfamily\tiny]
+        \begin{algorithm}[H]
+            \SetAlgoLined
+            \LinesNumbered
+            \SetKwInOut{Input}{input}
+            \SetKwInOut{Output}{output}
+            \Input{x: float, y: float}
+            \Output{r: float}
+            \While{True}{
+              r = x + y\;
+              \eIf{r >= 30}{
+               ``O valor de $r$ é maior ou iqual a 10.''\;
+               break\;
+               }{
+               ``O valor de $r$ = '', r\;
+              }
+             } 
+             \caption{Algorithm Example}
+        \end{algorithm}
+    \end{lstlisting}
+    \end{column}
+    \begin{column}{.4\textwidth}
+        \begin{algorithm}[H]
+            \SetAlgoLined
+            \LinesNumbered
+            \SetKwInOut{Input}{input}
+            \SetKwInOut{Output}{output}
+            \Input{x: float, y: float}
+            \Output{r: float}
+            \While{True}{
+              r = x + y\;
+              \eIf{r >= 30}{
+               ``O valor de $r$ é maior ou iqual a 10.''\;
+               break\;
+               }{
+               ``O valor de $r$ = '', r\;
+              }
+             } 
+             \caption{Algorithm Example}
+        \end{algorithm}
+    \end{column}
+    \end{columns}
 \end{frame}

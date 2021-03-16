@@ -11,6 +11,10 @@
 \usepackage{hologo}
 \usepackage[normalem]{ulem}
 \usepackage{fontawesome5}
+\usepackage{minted}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, shapes, shapes.multipart, backgrounds, calc, automata}
+\usepackage{algorithm2e}
 \graphicspath{{fig/}}
 
 \def\rawcmd#1{\texttt{\color{DarkBlue}\footnotesize #1}}
@@ -66,6 +70,7 @@
 \def\BibTeX{Bib\TeX}
 % \def\ThuThesis{ThuThesis}
 \def\XeLaTeX{\hologo{Xe}\kern-.13em\LaTeX}
+\def\pdfLaTeX{pdf\LaTeX}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Start Document of the Presentation                                           %%               
@@ -99,6 +104,7 @@
 
 \input{body}
 \input{plugin}
+\input{chinese}
 \input{summary}
 
 % %% ---------------------------------------------------------------------------
