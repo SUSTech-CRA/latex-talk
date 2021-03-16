@@ -3,8 +3,9 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{libs/SUSTech_format}[15/12/2020 v1.0 ufc template beamer]
 
-\PassOptionsToPackage{svgnames}{xcolor} 
-\LoadClass[compress, 10pt,aspectratio=169]{beamer}
+\PassOptionsToPackage{svgnames}{xcolor}
+% 暂时添加 handout，方便调试
+\LoadClass[compress, 10pt,aspectratio=169,handout]{beamer}
 
 %% Putting the background image in the frames
 %% Global background setting
