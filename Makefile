@@ -8,7 +8,11 @@ all: doc
   RM = rm -f
 # endif
 
-doc: clean
+.PHONY: clean doc
+
+doc:
+	xelatex -shell-escape main.tex
+	biber main
 	xelatex -shell-escape main.tex
 	xelatex -shell-escape main.tex
 

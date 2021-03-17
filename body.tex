@@ -620,7 +620,7 @@
           \item 用 EndNote、Jabref 等生成
         \end{itemize} \pause
     
-      \item 传统方法：\BibTeX  后端
+      \item 传统方法（大部分会议、期刊模板）：\BibTeX  后端
     
         \begin{itemize}
           \item 控制文献、引用样式：\pkg{natbib} 宏包
@@ -645,3 +645,57 @@
       
     \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]{引用样例}
+  \lstset{language=[LaTeX]TeX}
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+    \begin{lstlisting}[basicstyle=\ttfamily\small]
+% In body.tex
+“真理只有一个，而究竟谁发现了真理，不依靠主观的夸张，而依靠客观的实践。”-- 毛泽东\cite{毛泽东1949新民主主义论}。
+
+% In references.bib
+@book{毛泽东1949新民主主义论,
+  title={新民主主义论},
+  author={毛泽东},
+  year={1949},
+  publisher={长江出版社}
+}
+    \end{lstlisting}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      “真理只有一个，而究竟谁发现了真理，不依靠主观的夸张，而依靠客观的实践。” -- 毛泽东\cite{毛泽东1949新民主主义论}。
+
+      \printbibliography
+    \end{column}
+    \end{columns}
+\end{frame}
+
+% \begin{frame}[fragile]
+%   \frametitle{测试}
+%   \begin{lstlisting} code \end{lstlisting}
+
+%     % \begin{minipage}{0.4\linewidth}
+%     %   \begin{lstlisting}[basicstyle=\ttfamily\small]
+%     %     “真理只有一个，而究竟谁发现了真理，不依靠主观的夸张，而依靠客观的实践。” -- 毛泽东\cite{毛泽东1949新民主主义论}。\end{lstlisting}
+%     % \end{minipage}
+% %     \begin{minipage}{0.4\linewidth}
+% %       \begin{lstlisting}[basicstyle=\ttfamily\small]
+% %         @book{毛泽东1949新民主主义论,
+% %   title={新民主主义论},
+% %   author={毛泽东},
+% %   year={1949},
+% %   publisher={长江出版社}
+% % }\end{lstlisting}
+% %     \end{minipage}
+% %     \begin{minipage}{0.4\linewidth}
+% % \begin{lstlisting}
+% %   “真理只有一个，而究竟谁发现了真理，不依靠主观的夸张，而依靠客观的实践。” -- 毛泽东\cite{毛泽东1949新民主主义论}。
+% % \end{lstlisting}
+      
+% % “真理只有一个，而究竟谁发现了真理，不依靠主观的夸张，而依靠客观的实践。” -- 毛泽东\cite{毛泽东1949新民主主义论}。
+% %     \end{minipage}\hspace{1.5cm}
+% %     \begin{minipage}{0.4\linewidth}
+% %       \printbibliography
+% %     \end{minipage}\hspace{1.5cm}
+% \end{frame}
