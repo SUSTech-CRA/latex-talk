@@ -1,11 +1,10 @@
-# SUSTech Slide Template for Presentation
+# 《LaTeX 入门》 南方科技大学图书馆培训讲座
 
-Here is the presentation template based on LateX developed by Tong YUAN, in this `README.md` file, severial instructions abput how to apply this template will be demostrated.
+[预览PDF(点此)](./main.pdf)
 
-## Directly Apply this template to your Report and Presentation
+## 致谢
 
-To be finished
-
-## Modify some details based on your own sense of aesthetic
-
-To be finished
+* [Tonanguyxiro](https://github.com/Tonanguyxiro) 提供 [Beamer 模版](https://github.com/Tonanguyxiro/SUSTech-Slide-Template)
+* [SUSTech-CRA](https://github.com/SUSTech-CRA) 提供资源支持
+* [南方科技大学图书馆](https://lib.sustech.edu.cn/) 提供场地支持
+* 
