@@ -96,25 +96,25 @@
     \begin{columns}
     \begin{column}{.6\textwidth}
         \lstset{language=[LaTeX]TeX}
-    \begin{lstlisting}[basicstyle=\ttfamily\tiny]
-        \begin{algorithm}[H]
-            \SetAlgoLined
-            \LinesNumbered
-            \SetKwInOut{Input}{input}
-            \SetKwInOut{Output}{output}
-            \Input{x: float, y: float}
-            \Output{r: float}
-            \While{True}{
-              r = x + y\;
-              \eIf{r >= 30}{
-               ``O valor de $r$ é maior ou iqual a 10.''\;
-               break\;
-               }{
-               ``O valor de $r$ = '', r\;
-              }
-             } 
-             \caption{Algorithm Example}
-        \end{algorithm}
+    \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+\begin{algorithm}[H]
+    \SetAlgoLined
+    \LinesNumbered
+    \SetKwInOut{Input}{input}
+    \SetKwInOut{Output}{output}
+    \Input{x: float, y: float}
+    \Output{r: float}
+    \While{True}{
+        r = x + y\;
+        \eIf{r >= 30}{
+        ``O valor de $r$ é maior ou iqual a 10.''\;
+        break\;
+        }{
+        ``O valor de $r$ = '', r\;
+        }
+        } 
+        \caption{Algorithm Example}
+\end{algorithm}
     \end{lstlisting}
     \end{column}
     \begin{column}{.4\textwidth}
