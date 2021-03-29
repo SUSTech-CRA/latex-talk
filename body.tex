@@ -219,9 +219,9 @@
     \begin{itemize}
       \item 加粗：|{\bfseries ...}| 或 |\textbf{...}|
       \item 倾斜：|{\itshape ...}| 或 |\textit{...}|
-      \item 字号：|\tiny|、|\small|、|\large|、|\Large| 等
+      \item 字号：|\tiny|、|\small|、|\normalsize|、|\large|、|\huge| 等
       \item 换行：|\\|
-      \item 缩进：|\indent|
+      \item 缩进：|\indent|、|\noindent|
       \item 居中：|\centering| 或 |center| 环境
     \end{itemize}
   \end{frame}
@@ -339,7 +339,7 @@
     \begin{frame}[fragile]{\LaTeX{} 数学公式}
         \begin{itemize}
         \item 数学公式排版是 \LaTeX{} 的绝对强项
-        \item 数学排版需要进入数学模式，引用 \texttt{amsmath} 宏包
+        \item 数学排版需要进入数学模式，引用 \texttt{amsmath} 宏包，由美国数学学会(American Mathematical Society, AMS) 提供。
             \begin{itemize}
             \item 用单个美元符号(\verb|$|) 包围起来的内容是 {\bf 行内公式}
           \item 用两个美元符号(\verb|$$|) （不推荐）或 \verb|\[ \]| 包围起来的是 {\bf 单行公式} 或 {\bf 行间公式}
@@ -536,12 +536,12 @@
       
       \begin{frame}[fragile]{表格绘制}
         \begin{itemize}
-          \item 使用 \pkg{booktabs}、\pkg{longtables}、\pkg{multirow} 等宏包
+          \item 使用 \pkg{booktabs}（三线表）、\pkg{longtables}（跨页表）、\pkg{multirow}（单元格内换行） 等宏包
           \item 手动绘制表格确实比较令人头疼，且较难维护
           \item 推荐使用在线工具绘制后导出代码：
             \begin{itemize}
-              \item \LaTeX{} \ Tables Editor \link{https://www.latex-tables.com/}
-              \item \LaTeX{} \ Table Generator \link{https://www.tablesgenerator.com/latex_tables}
+              \item \LaTeX{} Tables Editor \link{https://www.latex-tables.com/}
+              \item \LaTeX{} Table Generator \link{https://www.tablesgenerator.com/latex_tables}
             \end{itemize}
         \end{itemize}
       \end{frame}
@@ -668,7 +668,7 @@
         \begin{itemize}
           \item \pdfLaTeX -> \BibTeX -> \pdfLaTeX -> \pdfLaTeX
           \item \XeLaTeX -> \BibTeX -> \XeLaTeX -> \XeLaTeX
-          \item 使用一键脚本：\pkg{VS Code plugin}, \pkg{MakeFile}, \pkg{Batch} script, \pkg{latexmk}
+          \item 一键使用：\pkg{VS Code plugin}, \pkg{MakeFile}, \pkg{Batch} script, \pkg{latexmk}
         \end{itemize}
       
     \end{itemize}
