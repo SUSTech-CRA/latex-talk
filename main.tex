@@ -122,7 +122,8 @@
     \usebackgroundtemplate{\includegraphics[width=1.7\paperwidth]{libs/LOGO transparent.png}}
     \begin{frame}{}
         \centering
-        \huge{\textbf{\example{Thanks!}}}\\
+        {\huge{\textbf{\example{Thanks!}}}\\}
+
         % \vspace{1cm}
         \begin{columns}
             \column{.48\textwidth}
@@ -131,7 +132,21 @@
             \end{figure}
 
             \column{.48\textwidth}
-            \Large 计协交流社区 \\ CRA Community \url{https://c.cra.moe/}
+            \begin{center}
+                {\Large 计协交流社区 \\ \url{https://c.cra.moe/}}
+            \end{center}
+
+            \begin{figure} 
+                \centering 
+                \begin{minipage}[c]{.15\textwidth} 
+                  \centering%
+                  问卷调查
+                \end{minipage}%
+                \begin{minipage}[c]{.8\textwidth} 
+                  \centering 
+                  \includegraphics[scale=0.3]{survey.jpeg}
+                \end{minipage} 
+              \end{figure}
         \end{columns}
         
     \end{frame}
