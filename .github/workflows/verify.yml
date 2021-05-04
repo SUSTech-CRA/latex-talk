@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
+
       - name: Compile LaTeX document
         uses: xu-cheng/texlive-action/full@v1
         with:
@@ -19,23 +19,26 @@ jobs:
         with:
           name: PDF
           path: main.pdf
-          
+
   create_release:
     runs-on: ubuntu-latest
     if: "startsWith(github.ref, 'refs/tags/v')"
     steps:
+      - name: Get version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
-          filename: 'sustech-latex-talk.zip'
+          filename: 'sustech-latex-talk-${{ steps.get_version.outputs.VERSION }}.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           body_path: CHANGELOG.txt
-          files: sustech-latex-talk.zip
+          files: 'sustech-latex-talk-${{ steps.get_version.outputs.VERSION }}.zip'
         env:
           GITHUB_TOKEN: ${{ secrets.ORG_TOKEN }}
